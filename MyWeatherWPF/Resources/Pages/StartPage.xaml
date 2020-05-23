@@ -1,0 +1,69 @@
+﻿<Page x:Class="MyWeatherWPF.Resources.Pages.StartPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MyWeatherWPF.Resources.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="500"
+      Title="StartPage"
+      >
+    <Grid>
+        <Rectangle Grid.RowSpan="3" Grid.ColumnSpan="2">
+            <Rectangle.Fill>
+                <LinearGradientBrush Opacity="0.75" SpreadMethod="Reflect" StartPoint="0,0" EndPoint="0,0.9">
+                    <GradientStop Color="#1bf2ce" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Button Click="UpdateData" VerticalAlignment="Top" HorizontalAlignment="Left" Width="25" Background="Transparent">
+            <Image Source="/Resources/Icons/UpDate.png"/>
+        </Button>
+        <Label Name="MainTemp" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.RowSpan="2" FontSize="68" FontWeight="Bold" Foreground="White" FontFamily="Times New Roman" Height="88" Width="78" Grid.ColumnSpan="2"/>
+        <Label Name="FeelsLikeLab"  Grid.Row="1" Content="Feels like" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontFamily="Times New Roman" FontSize="19" Height="32" Grid.ColumnSpan="2"/>
+        <Label Name="Descript" VerticalAlignment="Bottom" HorizontalAlignment="Center" Content="Description" Grid.Row="1" Foreground="White" FontFamily="Times New Roman" FontSize="20" FontWeight="DemiBold" Height="33" Grid.ColumnSpan="2"/>
+
+        <Label Name="MaxTemp" Content="Max 19" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="White" FontSize="18" FontFamily="Times new roman" FontWeight="DemiBold" Grid.Column="1" Margin="9 0 0 0"/>
+        <Label Name="MinTemp"  Content="Min 19" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Right" Foreground="White" FontSize="18" FontFamily="Times new roman" FontWeight="DemiBold" Margin="0 0 9 0"/>
+        <Label Name="City_Name" Content="City_Name" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="White" FontSize="38" FontFamily="Times new roman" FontWeight="DemiBold" Grid.ColumnSpan="2"/>
+
+        <WrapPanel x:Name="WrapPanel1" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Top" Width="158" Height="130">
+            <Image Name="Icon_ID" Width="130" Height="130" />
+        </WrapPanel>
+        <GroupBox Header="Город" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Bottom">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <ComboBox Name="CityID" VerticalAlignment="Center" Margin="5 0 5 0" Grid.Column="1">
+                    <ComboBoxItem Content="Moscow" Name="Moscow" />
+                    <ComboBoxItem Content="Ryazan" Tag="500095"/>
+                    <ComboBoxItem Content="Saint Petersburg" Tag="498817" />
+                    <ComboBoxItem Content="Shchelkovo" Tag="495344" />
+                    <ComboBoxItem Content="Samara" Tag="499099" />
+                    <ComboBoxItem Content="Khabarovsk" Tag="2022890" />
+                    <ComboBoxItem Content="Belgorod" Tag="578072"/>
+                </ComboBox>
+                <TextBox Name="SearchCity" Text="Type city name in English" GotFocus="SearchCity_GotFocus" Margin="9 0 23 0" VerticalAlignment="Center" Foreground="#FF808080" FontStyle="Italic"/>
+                <Button Name="Search" Width="18" Height="18" VerticalAlignment="Center" HorizontalAlignment="Right" Click="Search_Click" >
+                    <Image Source="/Resources/Icons/Loupe.png"/>
+                </Button>
+            </Grid>
+        </GroupBox>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="99*"/>
+            <RowDefinition Height="152*"/>
+            <RowDefinition Height="99*"/>
+        </Grid.RowDefinitions>
+    </Grid>
+</Page>

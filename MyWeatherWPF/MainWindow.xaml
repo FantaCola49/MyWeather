@@ -1,0 +1,24 @@
+﻿<Window x:Class="MyWeatherWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyWeatherWPF"
+        mc:Ignorable="d"
+        Title="Forecast by Ner" Height="450" Width="600"
+        ResizeMode="NoResize"
+        Background="Transparent">
+
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!--<ContentControl x:Name="ContentControl1"/>-->
+        <Frame x:Name="Frame" Grid.RowSpan="2" Grid.ColumnSpan="2" Loaded="Next_Page" />
+    </Grid>
+</Window>
