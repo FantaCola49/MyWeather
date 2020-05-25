@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MyWeatherWPF.Resources.Pages;
+using MyWether.Class;
 
 namespace MyWeatherWPF
 {
@@ -31,5 +32,6 @@ namespace MyWeatherWPF
             StartPage start = new StartPage();
             Frame.Navigate(start);
         }
+
     }
 }

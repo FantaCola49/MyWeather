@@ -12,6 +12,7 @@ namespace MyWeatherWPF.Resources.Pages
         public StartPage()
         {
             InitializeComponent();
+            ContentDispose();
         }
         GetData getData = new GetData();
         
@@ -63,6 +64,15 @@ namespace MyWeatherWPF.Resources.Pages
         private void SearchCity_GotFocus(object sender, RoutedEventArgs e)
         {
             SearchCity.Text = null;
+        }
+        private void ContentDispose()
+        {
+            City_Name.Content = null;
+            MainTemp.Content = null;
+            FeelsLikeLab.Content = null;
+            Descript.Content = null;
+            MaxTemp.Content = null;
+            MinTemp.Content = null;
         }
     }
 }
